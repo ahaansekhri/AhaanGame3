@@ -13,6 +13,7 @@ var PressedOne = false;
 var bugs;
 var score = 0;
 var xD, yD;
+var playTrue = true;
 
 
 function preload(){
@@ -40,6 +41,7 @@ function setup() {
 	hero.addImage(heroIMG);
 	hero.scale = 0.175;
 	hero.rotation = 130;
+	hero.debug = true;
 	//hero.visible = false;
 
 	camera.x = hero.x;
@@ -173,6 +175,7 @@ function setup() {
 	sprite1 = createSprite(enemy1.body.position.x,enemy1.body.position.y,40,40);
 	sprite1.addImage(enemyImage);
 	sprite1.scale = 0.07;
+	sprite1.debug = true;
 
 	enemy2 = new Enemy(width/2-1400,height/2,0,40,5);
 	sprite2 = createSprite(enemy2.body.position.x,enemy2.body.position.y,40,40);
@@ -304,43 +307,43 @@ function draw() {
   background("black");
  
   if(gameState === 1){
-	if(keyDown(LEFT_ARROW) && keyIsDown(88) === false){
+	if(keyDown(LEFT_ARROW) && keyDown(88) == false){
 		hero.x = hero.x-9;//9 later
 		hero.rotation = 40;
 	}
 
-	 if(keyDown(65)&& keyIsDown(88) === false){
+	 if(keyDown(65) && keyDown(88) == false){
 	 	hero.x = hero.x-9;//9 later
 	 	hero.rotation = 40;
 	 }
 
-	if(keyDown(RIGHT_ARROW)&& keyIsDown(88) === false){
+	if(keyDown(RIGHT_ARROW) && keyDown(88) == false){
 	  hero.x = hero.x+9;//slow later
 	  hero.rotation = 220;
   }
 
-  if(keyDown(68)&& keyIsDown(88) === false){
+  if(keyDown(68) && keyDown(88) == false){
  	hero.x = hero.x+9;//slow later
  	hero.rotation = 220;
  }
 
-  if(keyDown(UP_ARROW)&& keyIsDown(88) === false){
+  if(keyDown(UP_ARROW) && keyDown(88) == false){
 	  hero.y = hero.y-9;//slow later
 	  hero.rotation = 130;
   }
 
-  if(keyDown(87)&& keyIsDown(88) === false){
+  if(keyDown(87) && keyDown(88) == false){
  	hero.y = hero.y-9;//slow later
  	hero.rotation = 130;
   }
   
-  if(keyDown(DOWN_ARROW) && keyIsDown(88) === false){
+  if(keyDown(DOWN_ARROW) && keyDown(88) == false){
 	  hero.y = hero.y+9;//slow later
 	  hero.rotation = 310;
 
   }
 
-   if(keyDown(83)&& keyIsDown(88) === false){
+   if(keyDown(83) && keyDown(88) == false){
  	hero.y = hero.y+9;//slow later
  	hero.rotation = 130;
  	}
@@ -525,154 +528,303 @@ sprite24.x = enemy24.body.position.x;
 sprite24.y = enemy24.body.position.y;
 
 
-if(hero.isTouching(sprite1)&& keyIsDown(88)){
-	enemy1.destroy();
-	sprite1.destroy();
-	score++;
+if(hero.isTouching(sprite1)){
+	if(keyDown(88)){
+		enemy1.destroy();
+		sprite1.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite2)&& keyIsDown(88)){
-	enemy2.destroy();
-	sprite2.destroy();
-	score++;
+if(hero.isTouching(sprite2)){
+	if(keyDown(88)){
+		enemy2.destroy();
+		sprite2.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite3)&& keyIsDown(88)){
-	enemy3.destroy();
-	sprite3.destroy();
-	score++;
+
+if(hero.isTouching(sprite3)){
+	if(keyDown(88)){
+		enemy3.destroy();
+		sprite3.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite4)&& keyIsDown(88)){
-	enemy4.destroy();
-	sprite4.destroy();
-	score++;
+if(hero.isTouching(sprite4)){
+	if(keyDown(88)){
+		enemy4.destroy();
+		sprite4.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite5)&& keyIsDown(88)){
-	enemy5.destroy();
-	sprite5.destroy();
-	score++;
+if(hero.isTouching(sprite5)){
+	if(keyIsDown(88)){
+		enemy5.destroy();
+		sprite5.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite6)&& keyIsDown(88)){
-	enemy6.destroy();
-	sprite6.destroy();
-	score++;
+if(hero.isTouching(sprite6)){
+	if(keyDown(88)){
+		enemy6.destroy();
+		sprite6.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite7)&& keyIsDown(88)){
-	enemy7.destroy();
-	sprite7.destroy();
-	score++;
+if(hero.isTouching(sprite7)){
+	if(keyDown(88)){
+		enemy7.destroy();
+		sprite7.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite8)&& keyIsDown(88)){
-	enemy8.destroy();
-	sprite8.destroy();
-	score++;
+if(hero.isTouching(sprite8)){
+	if(keyDown(88)){
+		enemy8.destroy();
+		sprite8.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite9)&& keyIsDown(88)){
-	enemy9.destroy();
-	sprite9.destroy();
-	score++;
+if(hero.isTouching(sprite9)){
+	if(keyDown(88)){
+		enemy9.destroy();
+		sprite9.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite10)&& keyIsDown(88)){
-	enemy10.destroy();
-	sprite10.destroy();
-	score++;
+if(hero.isTouching(sprite10)){
+	if(keyDown(88)){
+		enemy10.destroy();
+		sprite10.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite11)&& keyIsDown(88)){
-	enemy11.destroy();
-	sprite11.destroy();
-	score++;
+if(hero.isTouching(sprite11)){
+	if(keyDown(88)){
+		enemy11.destroy();
+		sprite11.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite12)&& keyIsDown(88)){
-	enemy12.destroy();
-	sprite12.destroy();
-	score++;
+if(hero.isTouching(sprite12)){
+	if(keyDown(88)){
+		enemy12.destroy();
+		sprite12.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite13)&& keyIsDown(88)){
-	enemy13.destroy();
-	sprite13.destroy();
-	score++;
+if(hero.isTouching(sprite13)){
+	if(keyDown(88)){
+		enemy13.destroy();
+		sprite13.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite14)&& keyIsDown(88)){
-	enemy14.destroy();
-	sprite14.destroy();
-	score++;
+if(hero.isTouching(sprite14)){
+	if(keyDown(88)){
+		enemy14.destroy();
+		sprite14.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite15)&& keyIsDown(88)){
-	enemy15.destroy();
-	sprite15.destroy();
-	score++;
+if(hero.isTouching(sprite15)){
+	if(keyDown(88)){
+		enemy15.destroy();
+		sprite15.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
+}
+if(hero.isTouching(sprite16)){
+	if(keyDown(88)){
+		enemy16.destroy();
+		sprite16.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite16)&& keyIsDown(88)){
-	enemy16.destroy();
-	sprite16.destroy();
-	score++;
+if(hero.isTouching(sprite17)){
+	if(keyDown(88)){
+		enemy17.destroy();
+		sprite17.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite17)&& keyIsDown(88)){
-	enemy17.destroy();
-	sprite17.destroy();
-	score++;
+if(hero.isTouching(sprite18)){
+	if(keyDown(88)){
+		enemy18.destroy();
+		sprite18.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite18)&& keyIsDown(88)){
-	enemy18.destroy();
-	sprite18.destroy();
-	score++;
+if(hero.isTouching(sprite19)){
+	if(keyDown(88)){
+		enemy19.destroy();
+		sprite19.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite19)&& keyIsDown(88)){
-	enemy19.destroy();
-	sprite19.destroy();
-	score++;
+if(hero.isTouching(sprite20)){
+	if(keyDown(88)){
+		enemy20.destroy();
+		sprite20.destroy();
+		score++;
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite20)&& keyIsDown(88)){
-	enemy20.destroy();
-	sprite20.destroy();
-	score++;
+if(hero.isTouching(sprite21)){
+	if(keyDown(88)){
+		enemy21.destroy();
+		sprite21.destroy();
+		score++;
+	
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite21)&& keyIsDown(88)){
-	enemy21.destroy();
-	sprite21.destroy();
-	score++;
+if(hero.isTouching(sprite22)){
+	if(keyDown(88)){
+		enemy22.destroy();
+		sprite22.destroy();
+		score++;
+	
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite22)&& keyIsDown(88)){
-	enemy22.destroy();
-	sprite22.destroy();
-	score++;
+if(hero.isTouching(sprite23)){
+	if(keyDown(88)){
+		enemy23.destroy();
+		sprite23.destroy();
+		score++;
+	
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite23)&& keyIsDown(88)){
-	enemy23.destroy();
-	sprite23.destroy();
-	score++;
+if(hero.isTouching(sprite24)){
+	if(keyIsDown(88)){
+		enemy24.destroy();
+		sprite24.destroy();
+		score++;
+	
+	}
+
+	else{
+		gameState=3
+	}
 }
 
-if(hero.isTouching(sprite24)&& keyIsDown(88)){
-	enemy24.destroy();
-	sprite24.destroy();
-	score++;
-}
   drawSprites();
 
   
 push();
-	fill("white")
+  fill("white")
   if(textState === 0){
 	textSize(20)
 	text("Hello and welcome to the mythical labrynith!",hero.x-390,hero.y-220);
@@ -691,19 +843,20 @@ push();
 
   if(textState === 1){
 	gameState = 1;
+	textState = 3;
   }
 
   pop();
 
-  if(keyDown(88)){
-		for(i in bugs){
-			if(hero.isTouching(bugs[i])){
-				bugs[i].destory();
-				bugs[i] = undefined;
+//   if(keyDown(88)){
+// 		for(i in bugs){
+// 			if(hero.isTouching(bugs[i])){
+// 				bugs[i].destroy();
+// 				bugs[i] = undefined;
 
-			}
-		}
-	}
+// 			}
+// 		}
+// 	}
 
   enemy1.display();
   enemy2.display();
@@ -735,17 +888,15 @@ push();
 
   if(score === 24){
 	gameState = 2;
-	
-  }
-
-  if(gameState === 2){
-	score=25;
 	timeEnd = Date.now();
 	timeTaken = (timeEnd-timeStart)/1000;
-	gameState = 3
-	alert("you have taken "+timeTaken+" seconds to kill all the bugs!")
+	alert("you have taken "+timeTaken+" seconds to kill all the bugs!");
   }
 
+  if(gameState === 3){
+	textSize(50)
+	text("You have Died!",hero.x-200,hero.y);
+  }
 
 }
 
