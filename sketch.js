@@ -41,7 +41,6 @@ function setup() {
 	hero.addImage(heroIMG);
 	hero.scale = 0.175;
 	hero.rotation = 130;
-	hero.debug = true;
 	//hero.visible = false;
 
 	camera.x = hero.x;
